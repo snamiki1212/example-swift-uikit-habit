@@ -10,42 +10,50 @@ import UIKit
 class MainTabBarController: UITabBarController {
 
     let homeVC: UINavigationController = {
-        let vc = UIViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        let vc: UIViewController = {
+            let vc = UIViewController()
+            let image = UIImage(systemName: "house.fill")
+            vc.tabBarItem = UITabBarItem(title: "Home", image: image, tag: 0)
+            vc.view.backgroundColor = .blue // TODO:
+            return vc
+        }()
         let nav = UINavigationController(rootViewController: vc)
-        
-        // TODO:
-        vc.view.backgroundColor = .blue
         return nav
     }()
     
     let habitVC: UINavigationController = {
-        let vc = UIViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        let vc: UIViewController = {
+            let vc = UIViewController()
+            let image = UIImage(systemName: "star.fill")
+            vc.tabBarItem = UITabBarItem(title: "Habits", image: image, tag: 1)
+            vc.view.backgroundColor = .yellow // TODO:
+            return vc
+        }()
         let nav = UINavigationController(rootViewController: vc)
-        
-        // TODO:
-        vc.view.backgroundColor = .yellow
         return nav
     }()
     
     let peopleVC: UINavigationController = {
-        let vc = UIViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+        let vc: UIViewController = {
+            let vc = UIViewController()
+            let image = UIImage(systemName: "person.2.fill")
+            vc.tabBarItem = UITabBarItem(title: "People", image: image, tag: 2)
+            vc.view.backgroundColor = .red // TODO:
+            return vc
+        }()
         let nav = UINavigationController(rootViewController: vc)
-        
-        // TODO:
-        vc.view.backgroundColor = .red
         return nav
     }()
     
     let logHabbitVC: UINavigationController = {
-        let vc = UIViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
+        let vc: UIViewController = {
+            let vc = UIViewController()
+            let image = UIImage(systemName: "checkmark.square.fill")
+            vc.tabBarItem = UITabBarItem(title: "Log Habits", image: image, tag: 1)
+            vc.view.backgroundColor = .blue // TODO:
+            return vc
+        }()
         let nav = UINavigationController(rootViewController: vc)
-        
-        // TODO:
-        vc.view.backgroundColor = .systemPink
         return nav
     }()
     
