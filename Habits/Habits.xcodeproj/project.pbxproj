@@ -11,6 +11,12 @@
 		2418D34A2666A507001C234C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418D3492666A507001C234C /* SceneDelegate.swift */; };
 		2418D3512666A508001C234C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2418D3502666A508001C234C /* Assets.xcassets */; };
 		24F6285F2666EF740036218C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6285E2666EF740036218C /* MainTabBarController.swift */; };
+		24F628612666F44F0036218C /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628602666F44F0036218C /* HomeCollectionViewController.swift */; };
+		24F628632666F5800036218C /* HabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628622666F5800036218C /* HabitCollectionViewController.swift */; };
+		24F628652666F58F0036218C /* UserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628642666F58F0036218C /* UserCollectionViewController.swift */; };
+		24F628672666F5980036218C /* LogHabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628662666F5980036218C /* LogHabitCollectionViewController.swift */; };
+		24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6286C2666F66B0036218C /* HabitDetailViewController.swift */; };
+		24F6286F2666F67B0036218C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6286E2666F67B0036218C /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		2418D3502666A508001C234C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2418D3552666A508001C234C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24F6285E2666EF740036218C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		24F628602666F44F0036218C /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		24F628622666F5800036218C /* HabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewController.swift; sourceTree = "<group>"; };
+		24F628642666F58F0036218C /* UserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewController.swift; sourceTree = "<group>"; };
+		24F628662666F5980036218C /* LogHabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHabitCollectionViewController.swift; sourceTree = "<group>"; };
+		24F6286C2666F66B0036218C /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
+		24F6286E2666F67B0036218C /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +85,46 @@
 			isa = PBXGroup;
 			children = (
 				24F6285E2666EF740036218C /* MainTabBarController.swift */,
+				24F628682666F6380036218C /* Home */,
+				24F628692666F63D0036218C /* Habit */,
+				24F6286A2666F6420036218C /* User */,
+				24F6286B2666F6460036218C /* LogHabit */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		24F628682666F6380036218C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				24F628602666F44F0036218C /* HomeCollectionViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		24F628692666F63D0036218C /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				24F628622666F5800036218C /* HabitCollectionViewController.swift */,
+				24F6286C2666F66B0036218C /* HabitDetailViewController.swift */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		24F6286A2666F6420036218C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				24F628642666F58F0036218C /* UserCollectionViewController.swift */,
+				24F6286E2666F67B0036218C /* UserDetailViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		24F6286B2666F6460036218C /* LogHabit */ = {
+			isa = PBXGroup;
+			children = (
+				24F628662666F5980036218C /* LogHabitCollectionViewController.swift */,
+			);
+			path = LogHabit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F628672666F5980036218C /* LogHabitCollectionViewController.swift in Sources */,
 				2418D3482666A507001C234C /* AppDelegate.swift in Sources */,
+				24F6286F2666F67B0036218C /* UserDetailViewController.swift in Sources */,
+				24F628612666F44F0036218C /* HomeCollectionViewController.swift in Sources */,
+				24F628632666F5800036218C /* HabitCollectionViewController.swift in Sources */,
+				24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */,
 				24F6285F2666EF740036218C /* MainTabBarController.swift in Sources */,
 				2418D34A2666A507001C234C /* SceneDelegate.swift in Sources */,
+				24F628652666F58F0036218C /* UserCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

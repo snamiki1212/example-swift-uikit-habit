@@ -10,11 +10,10 @@ import UIKit
 class MainTabBarController: UITabBarController {
 
     let homeVC: UINavigationController = {
-        let vc: UIViewController = {
-            let vc = UIViewController()
+        let vc: UICollectionViewController = {
+            let vc = HomeCollectionViewController()
             let image = UIImage(systemName: "house.fill")
             vc.tabBarItem = UITabBarItem(title: "Home", image: image, tag: 0)
-            vc.view.backgroundColor = .blue // TODO:
             return vc
         }()
         let nav = UINavigationController(rootViewController: vc)
@@ -22,23 +21,21 @@ class MainTabBarController: UITabBarController {
     }()
     
     let habitVC: UINavigationController = {
-        let vc: UIViewController = {
-            let vc = UIViewController()
+        let vc: UICollectionViewController = {
+            let vc = HabitCollectionViewController()
             let image = UIImage(systemName: "star.fill")
             vc.tabBarItem = UITabBarItem(title: "Habits", image: image, tag: 1)
-            vc.view.backgroundColor = .yellow // TODO:
             return vc
         }()
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }()
     
-    let peopleVC: UINavigationController = {
-        let vc: UIViewController = {
-            let vc = UIViewController()
+    let userVC: UINavigationController = {
+        let vc: UICollectionViewController = {
+            let vc = UserCollectionViewController()
             let image = UIImage(systemName: "person.2.fill")
             vc.tabBarItem = UITabBarItem(title: "People", image: image, tag: 2)
-            vc.view.backgroundColor = .red // TODO:
             return vc
         }()
         let nav = UINavigationController(rootViewController: vc)
@@ -46,11 +43,10 @@ class MainTabBarController: UITabBarController {
     }()
     
     let logHabbitVC: UINavigationController = {
-        let vc: UIViewController = {
-            let vc = UIViewController()
+        let vc: UICollectionViewController = {
+            let vc = LogHabitCollectionViewController()
             let image = UIImage(systemName: "checkmark.square.fill")
             vc.tabBarItem = UITabBarItem(title: "Log Habits", image: image, tag: 1)
-            vc.view.backgroundColor = .blue // TODO:
             return vc
         }()
         let nav = UINavigationController(rootViewController: vc)
@@ -64,7 +60,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             homeVC,
             habitVC,
-            peopleVC,
+            userVC,
             logHabbitVC,
         ]
     }
