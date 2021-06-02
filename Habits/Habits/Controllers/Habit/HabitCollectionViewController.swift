@@ -58,6 +58,11 @@ class HabitCollectionViewController: UICollectionViewController {
         }
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HABIT_CELL_ID, for: indexPath) as! HabitCollectionViewCell
+        navigationController?.pushViewController(HabitDetailViewController(), animated: true)
+    }
+    
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) {
            (collectionView, indexPath, item) in

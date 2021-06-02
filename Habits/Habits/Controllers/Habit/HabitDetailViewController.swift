@@ -12,5 +12,6 @@ class HabitDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "HABIT_DETAIL" // TODO:
+        view.backgroundColor = .white
     }
 }
