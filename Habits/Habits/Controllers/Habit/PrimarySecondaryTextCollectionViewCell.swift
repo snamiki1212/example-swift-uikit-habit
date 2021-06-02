@@ -1,5 +1,5 @@
 //
-//  HabitCollectionViewCell.swift
+//  PrimarySecondaryTextCollectionViewCell.swift
 //  Habits
 //
 //  Created by shunnamiki on 2021/06/01.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-// TODO: REMOVE?
-class HabitCollectionViewCell: UICollectionViewCell {
-    // TODO: create class PrimarySecondaryTextCollectionViewCell
+class PrimarySecondaryTextCollectionViewCell: UICollectionViewCell {
     let primaryTextLabel: UILabel = {
         let label = UILabel()
         label.text = "test"
