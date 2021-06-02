@@ -1,5 +1,7 @@
 # OVERVIEW
 
+- BOOK: ‎Develop in Swift Data Collections(P751)
+
 ## SERVER
 
 ```zsh
@@ -16,3 +18,7 @@ open server/HabitServer.app
 /userLeadingStats: Combined with a user ID, a GET request to this endpoint will return user statistics containing just those habits in which the user is leading. If a user isn't leading in any habits, no statistics will be returned.
 /loggedHabit: A POST to this endpoint will log a new event related to[…]
 ```
+
+## LICENSE
+
+MIT
