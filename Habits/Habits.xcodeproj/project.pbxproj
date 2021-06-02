@@ -24,9 +24,10 @@
 		24F6287A26674CC90036218C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6287926674CC90036218C /* APIService.swift */; };
 		24F6287E266752E60036218C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6287D266752E60036218C /* Settings.swift */; };
 		24F62880266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6287F266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
-		24F6288226675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288126675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift */; };
+		24F6288226675B3C0036218C /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288126675B3C0036218C /* HabitCollectionViewCell.swift */; };
 		24F62884266762460036218C /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62883266762460036218C /* NamedSectionHeaderView.swift */; };
 		24F6288626682AC30036218C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288526682AC30036218C /* User.swift */; };
+		24F62888266847E40036218C /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62887266847E40036218C /* UserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +50,10 @@
 		24F6287926674CC90036218C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		24F6287D266752E60036218C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		24F6287F266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
-		24F6288126675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySecondaryTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		24F6288126675B3C0036218C /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
 		24F62883266762460036218C /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
 		24F6288526682AC30036218C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		24F62887266847E40036218C /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 			children = (
 				24F628622666F5800036218C /* HabitCollectionViewController.swift */,
 				24F6286C2666F66B0036218C /* HabitDetailViewController.swift */,
-				24F6288126675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift */,
+				24F6288126675B3C0036218C /* HabitCollectionViewCell.swift */,
 			);
 			path = Habit;
 			sourceTree = "<group>";
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				24F628642666F58F0036218C /* UserCollectionViewController.swift */,
+				24F62887266847E40036218C /* UserCollectionViewCell.swift */,
 				24F6286E2666F67B0036218C /* UserDetailViewController.swift */,
 			);
 			path = User;
@@ -236,12 +239,13 @@
 				24F628672666F5980036218C /* LogHabitCollectionViewController.swift in Sources */,
 				2418D3482666A507001C234C /* AppDelegate.swift in Sources */,
 				24F6287826674AE30036218C /* APIRequest.swift in Sources */,
-				24F6288226675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift in Sources */,
+				24F6288226675B3C0036218C /* HabitCollectionViewCell.swift in Sources */,
 				24F6286F2666F67B0036218C /* UserDetailViewController.swift in Sources */,
 				24F628612666F44F0036218C /* HomeCollectionViewController.swift in Sources */,
 				24F628632666F5800036218C /* HabitCollectionViewController.swift in Sources */,
 				24F6287626674A450036218C /* Color.swift in Sources */,
 				24F6288626682AC30036218C /* User.swift in Sources */,
+				24F62888266847E40036218C /* UserCollectionViewCell.swift in Sources */,
 				24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */,
 				24F6287A26674CC90036218C /* APIService.swift in Sources */,
 				24F6287226674A050036218C /* Habit.swift in Sources */,

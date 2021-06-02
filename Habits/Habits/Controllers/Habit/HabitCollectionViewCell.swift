@@ -1,5 +1,5 @@
 //
-//  HabitCollectionViewCell.swift
+//  PrimarySecondaryTextCollectionViewCell.swift
 //  Habits
 //
 //  Created by shunnamiki on 2021/06/01.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-// TODO: REMOVE?
 class HabitCollectionViewCell: UICollectionViewCell {
-    // TODO: create class PrimarySecondaryTextCollectionViewCell
     let primaryTextLabel: UILabel = {
         let label = UILabel()
         label.text = "test"
@@ -19,6 +17,13 @@ class HabitCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(primaryTextLabel)
+        primaryTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            primaryTextLabel.topAnchor.constraint(equalTo: topAnchor),
+            primaryTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            primaryTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            primaryTextLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
     }
     
     required init?(coder: NSCoder) {

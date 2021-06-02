@@ -8,7 +8,6 @@
 import UIKit
 
 private let HABIT_CELL_ID = "habit-cell-id"
-private let PRIMARY_SECONDARY_CELL_ID = "primary-secondary-cell-id"
 
 private let sectionHeaderKind = "SectionHeader"
 private let sectionHeaderIdentifier = "HeaderView"
@@ -62,7 +61,7 @@ class HabitCollectionViewController: UICollectionViewController {
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) {
            (collectionView, indexPath, item) in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PRIMARY_SECONDARY_CELL_ID, for: indexPath) as! PrimarySecondaryTextCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HABIT_CELL_ID, for: indexPath) as! HabitCollectionViewCell
             cell.primaryTextLabel.text = item.name
             return cell
         }
@@ -160,7 +159,7 @@ class HabitCollectionViewController: UICollectionViewController {
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
-        self.collectionView!.register(PrimarySecondaryTextCollectionViewCell.self, forCellWithReuseIdentifier: PRIMARY_SECONDARY_CELL_ID)
+        self.collectionView!.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: HABIT_CELL_ID)
         
         self.collectionView.register(NamedSectionHeaderView.self, forSupplementaryViewOfKind: sectionHeaderKind, withReuseIdentifier: sectionHeaderIdentifier)
     }

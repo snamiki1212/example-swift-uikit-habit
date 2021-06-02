@@ -54,7 +54,7 @@ class UserCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UserCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
@@ -183,7 +183,7 @@ class UserCollectionViewController: UICollectionViewController {
     
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PrimarySecondaryTextCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UserCollectionViewCell
             cell.primaryTextLabel.text = item.user.name
             return cell
         }
