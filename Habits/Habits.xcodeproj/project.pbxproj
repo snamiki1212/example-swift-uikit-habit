@@ -27,6 +27,7 @@
 		24F62880266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6287F266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
 		24F6288226675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288126675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift */; };
 		24F62884266762460036218C /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62883266762460036218C /* NamedSectionHeaderView.swift */; };
+		24F6288626682AC30036218C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288526682AC30036218C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		24F6287F266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
 		24F6288126675B3C0036218C /* PrimarySecondaryTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySecondaryTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		24F62883266762460036218C /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
+		24F6288526682AC30036218C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				24F6287D266752E60036218C /* Settings.swift */,
 				24F6287326674A270036218C /* Category.swift */,
 				24F6287526674A450036218C /* Color.swift */,
+				24F6288526682AC30036218C /* User.swift */,
 				24F6287726674AE30036218C /* APIRequest.swift */,
 				24F6287926674CC90036218C /* APIService.swift */,
 				24F6287F266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift */,
@@ -241,6 +244,7 @@
 				24F628612666F44F0036218C /* HomeCollectionViewController.swift in Sources */,
 				24F628632666F5800036218C /* HabitCollectionViewController.swift in Sources */,
 				24F6287626674A450036218C /* Color.swift in Sources */,
+				24F6288626682AC30036218C /* User.swift in Sources */,
 				24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */,
 				24F6287A26674CC90036218C /* APIService.swift in Sources */,
 				24F6287226674A050036218C /* Habit.swift in Sources */,
