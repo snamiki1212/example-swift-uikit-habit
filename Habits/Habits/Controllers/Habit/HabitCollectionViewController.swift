@@ -34,8 +34,6 @@ class HabitCollectionViewController: UICollectionViewController {
         typealias Item = Habit
     }
     
-    
-
     struct Model {
         var habitsByName = [String: Habit]()
         var favoriteHabits: [Habit] {
@@ -54,6 +52,7 @@ class HabitCollectionViewController: UICollectionViewController {
             case .failure:
                 self.model.habitsByName = [:]
             }
+            
             DispatchQueue.main.async {
                 self.updateCollectionView()
             }
@@ -157,7 +156,7 @@ class HabitCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
@@ -198,26 +197,5 @@ class HabitCollectionViewController: UICollectionViewController {
         
         return config
     }
-//
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of items
-//        return 0
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-//
-//        // Configure the cell
-//
-//        return cell
-//    }
-
-
 }
 
