@@ -28,11 +28,11 @@ class HabitDetailCollectionViewCell: UICollectionViewCell {
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         contentView.addSubview(userNameLabel)
         contentView.addSubview(countLabel)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            contentView.heightAnchor.constraint(equalToConstant: 44),
             userNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             userNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),

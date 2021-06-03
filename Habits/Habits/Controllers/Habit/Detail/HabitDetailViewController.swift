@@ -204,7 +204,6 @@ class HabitDetailViewController: UIViewController {
     override func viewDidLoad() {
         // basic
         super.viewDidLoad()
-        title = "HABIT_DETAIL" // TODO:
         view.backgroundColor = .white
         let safeArea = view.layoutMarginsGuide
         
@@ -229,7 +228,6 @@ class HabitDetailViewController: UIViewController {
         
         // for collectionView
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .red
         NSLayoutConstraint.activate([
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
