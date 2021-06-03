@@ -60,7 +60,14 @@ class HabitCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HABIT_CELL_ID, for: indexPath) as! HabitCollectionViewCell
-        navigationController?.pushViewController(HabitDetailViewController(), animated: true)
+//        let habit = indexPath.item
+        
+        // TODO: get correct habit
+//        let category = Category(name: "NAME", color: Color.init(hue: 1, saturation: 1, brightness: 1))
+//        let habit = Habit(name: "TEST", category: category, info: "info")
+        guard let habit = dataSource.itemIdentifier(for: indexPath) else { return }
+        
+        navigationController?.pushViewController(HabitDetailViewController(nibName: nil, bundle: nil, habit: habit)!, animated: true)
     }
     
     func createDataSource() -> DataSourceType {
