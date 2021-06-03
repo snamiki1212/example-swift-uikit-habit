@@ -14,4 +14,12 @@ struct UserCount {
 
 extension UserCount: Codable { }
 
-extension UserCount: Hashable { }
+extension UserCount: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(user)
+    }
+    
+    static func ==(_ lhs: UserCount, _ rhs: UserCount) -> Bool {
+        return lhs.user == rhs.user
+    }
+}

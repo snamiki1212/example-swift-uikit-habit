@@ -9,6 +9,8 @@ import UIKit
 
 class HabitDetailViewController: UIViewController {
     
+    var updateTimer: Timer?
+
     var habit: Habit!
     
     var habitNameLabel: UILabel = {
@@ -174,6 +176,20 @@ class HabitDetailViewController: UIViewController {
         )
     
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        update()
+        updateTimer = Timer.scheduledTimer( withTimeInterval: 1, repeats: true) { _ in
+            self.update()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        updateTimer?.invalidate()
+        updateTimer = nil
     }
     
     init?(nibName: String?, bundle: Bundle?, habit: Habit){
