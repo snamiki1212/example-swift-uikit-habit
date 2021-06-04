@@ -10,9 +10,11 @@ import UIKit
 class UserDetailViewController: UIViewController {
     let cellId = "user-detail-collection-cell-id"
 
+    var user: User!
+    
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
-        title = user.name
+        self.user = user
     }
     
     required init?(coder: NSCoder) {
@@ -81,6 +83,10 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         let safeArea = view.layoutMarginsGuide
+        
+        // for labels
+        userNameLabel.text = user.name
+        bioLabel.text = user.bio
         
         // for vStack
         view.addSubview(vStack)
