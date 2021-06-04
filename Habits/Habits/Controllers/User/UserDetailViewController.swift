@@ -18,7 +18,7 @@ class UserDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let imageView: UIImageView = {
+    let profileImageView: UIImageView = {
         let img = UIImage(systemName: "person.fill")
         let iv = UIImageView(image: img)
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -47,8 +47,8 @@ class UserDetailViewController: UIViewController {
     }()
     
     lazy var hStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imageView, userNameLabel])
-        imageView.widthAnchor.constraint(equalTo: stack.widthAnchor, multiplier: 0.3).isActive = true
+        let stack = UIStackView(arrangedSubviews: [profileImageView, userNameLabel])
+        profileImageView.widthAnchor.constraint(equalTo: stack.widthAnchor, multiplier: 0.3).isActive = true
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.alignment = .center
@@ -67,6 +67,14 @@ class UserDetailViewController: UIViewController {
         return stack
     }()
     
+    var collectionView: UICollectionView = {
+        let frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let layout = UICollectionViewLayout()
+        let cv = UICollectionView(frame: frame, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        return cv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -79,7 +87,14 @@ class UserDetailViewController: UIViewController {
             vStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
             vStack.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
         ])
-        
-        
+
+        // for collection view
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 20),
+            collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+        ])
     }
 }
