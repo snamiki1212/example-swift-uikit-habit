@@ -279,5 +279,16 @@ class UserDetailViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
         collectionView.backgroundColor = .red
+        
+        //
+        ImageRequest(imageID: user.id).send { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.profileImageView.image = image
+                }
+            default: break
+            }
+        }
     }
 }
