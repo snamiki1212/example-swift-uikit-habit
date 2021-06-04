@@ -56,3 +56,15 @@ struct ImageRequest: APIRequest {
     var imageID: String
     var path: String { "/images/" + imageID }
 }
+
+struct LogHabitRequest: APIRequest {
+    typealias Response = Void
+    var trackedEvent: LoggedHabit
+    var path: String { "/loggedHabit" }
+    var postData: Data? {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return try! encoder.encode(trackedEvent)
+    }
+}
+

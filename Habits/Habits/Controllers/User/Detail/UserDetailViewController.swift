@@ -94,7 +94,7 @@ class UserDetailViewController: UIViewController {
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) {
            (collectionView, indexPath, habitStat) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell( withReuseIdentifier: "HabitCount", for: indexPath) as! PrimarySecondaryTextCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! PrimarySecondaryTextCollectionViewCell
     
             cell.primaryLabel.text = habitStat.habit.name
             cell.secondaryLabel.text = "\(habitStat.count)"
@@ -278,8 +278,7 @@ class UserDetailViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
-        collectionView.backgroundColor = .red
-        
+        collectionView.backgroundColor = .white
         //
         ImageRequest(imageID: user.id).send { result in
             switch result {

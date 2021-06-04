@@ -24,8 +24,9 @@ class PrimarySecondaryTextCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         contentView.addSubview(primaryLabel)
         contentView.addSubview(secondaryLabel)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +36,6 @@ class PrimarySecondaryTextCollectionViewCell: UICollectionViewCell {
             primaryLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             secondaryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),
         ])
-        contentView.backgroundColor = .blue
     }
     
     required init?(coder: NSCoder) {

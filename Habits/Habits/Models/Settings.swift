@@ -11,6 +11,17 @@ struct Settings {
     static var shared = Settings()
     private let defaults = UserDefaults.standard
     
+    let currentUser = User(
+        id: "user0",
+        name: "Aga Orlova",
+        color: Color(
+            hue: 0.75707988194531695,
+            saturation: 0.81293901213002762,
+            brightness: 0.92267943863794188
+        ),
+        bio: "My guiding principles: I'm thoughtful and I believe. Can't learn enough about cinema! Gamer; Engineer. My family is what gets me out of bed every day."
+    )
+    
     private func archiveJSON<T: Encodable>(value: T, key: String) {
         let data = try! JSONEncoder().encode(value)
         let string = String(data: data, encoding: .utf8)
@@ -56,5 +67,7 @@ struct Settings {
         }
         favoriteHabits = favorites
     }
+    
+    
 }
 
