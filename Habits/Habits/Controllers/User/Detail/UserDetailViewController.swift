@@ -8,6 +8,7 @@
 import UIKit
 
 class UserDetailViewController: UIViewController {
+    let cellId = "user-detail-collection-cell-id"
 
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -67,11 +68,12 @@ class UserDetailViewController: UIViewController {
         return stack
     }()
     
-    var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let layout = UICollectionViewLayout()
         let cv = UICollectionView(frame: frame, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(PrimarySecondaryTextCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         return cv
     }()
     
@@ -96,5 +98,6 @@ class UserDetailViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
+        collectionView.backgroundColor = .red
     }
 }

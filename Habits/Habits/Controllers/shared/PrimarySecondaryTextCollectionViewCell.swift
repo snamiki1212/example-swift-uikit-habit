@@ -1,5 +1,5 @@
 //
-//  HabitDetailCollectionViewCell.swift
+//  PrimarySecondaryTextCollectionViewCell.swift
 //  Habits
 //
 //  Created by shunnamiki on 2021/06/03.
@@ -7,20 +7,18 @@
 
 import UIKit
 
-class HabitDetailCollectionViewCell: UICollectionViewCell {
-    static let cellId = "habit-detail-collection-cell-id"
-    
-    var userNameLabel: UILabel = {
+class PrimarySecondaryTextCollectionViewCell: UICollectionViewCell {
+    var primaryLabel: UILabel = {
         let label = UILabel()
-        label.text = "User Name"
+        label.text = "TODO:PRIMARY"
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var countLabel: UILabel = {
+    var secondaryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Count"
+        label.text = "TODO:SECONDARY"
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -28,14 +26,14 @@ class HabitDetailCollectionViewCell: UICollectionViewCell {
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        contentView.addSubview(userNameLabel)
-        contentView.addSubview(countLabel)
+        contentView.addSubview(primaryLabel)
+        contentView.addSubview(secondaryLabel)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentView.heightAnchor.constraint(equalToConstant: 44),
-            userNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            userNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),
+            primaryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            primaryLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            secondaryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),
         ])
         contentView.backgroundColor = .blue
     }

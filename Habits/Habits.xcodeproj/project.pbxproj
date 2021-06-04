@@ -28,7 +28,7 @@
 		24F62884266762460036218C /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62883266762460036218C /* NamedSectionHeaderView.swift */; };
 		24F6288626682AC30036218C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288526682AC30036218C /* User.swift */; };
 		24F62888266847E40036218C /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62887266847E40036218C /* UserCollectionViewCell.swift */; };
-		24F6288A266982440036218C /* HabitDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62889266982440036218C /* HabitDetailCollectionViewCell.swift */; };
+		24F6288A266982440036218C /* PrimarySecondaryTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F62889266982440036218C /* PrimarySecondaryTextCollectionViewCell.swift */; };
 		24F6288C266986E20036218C /* HabitStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288B266986E20036218C /* HabitStatistics.swift */; };
 		24F6288E266986F80036218C /* UserCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6288D266986F80036218C /* UserCount.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +57,7 @@
 		24F62883266762460036218C /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
 		24F6288526682AC30036218C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		24F62887266847E40036218C /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
-		24F62889266982440036218C /* HabitDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		24F62889266982440036218C /* PrimarySecondaryTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySecondaryTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		24F6288B266986E20036218C /* HabitStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatistics.swift; sourceTree = "<group>"; };
 		24F6288D266986F80036218C /* UserCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				24F6285E2666EF740036218C /* MainTabBarController.swift */,
+				24F628912669A6B40036218C /* shared */,
 				24F628682666F6380036218C /* Home */,
 				24F628692666F63D0036218C /* Habit */,
 				24F6286A2666F6420036218C /* User */,
@@ -143,9 +144,8 @@
 		24F6286A2666F6420036218C /* User */ = {
 			isa = PBXGroup;
 			children = (
-				24F628642666F58F0036218C /* UserCollectionViewController.swift */,
-				24F62887266847E40036218C /* UserCollectionViewCell.swift */,
-				24F6286E2666F67B0036218C /* UserDetailViewController.swift */,
+				24F628922669AF320036218C /* Index */,
+				24F628932669AF3B0036218C /* Detail */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				24F6286C2666F66B0036218C /* HabitDetailViewController.swift */,
-				24F62889266982440036218C /* HabitDetailCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -191,6 +190,31 @@
 				24F6288126675B3C0036218C /* HabitCollectionViewCell.swift */,
 			);
 			path = Index;
+			sourceTree = "<group>";
+		};
+		24F628912669A6B40036218C /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				24F62889266982440036218C /* PrimarySecondaryTextCollectionViewCell.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		24F628922669AF320036218C /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				24F628642666F58F0036218C /* UserCollectionViewController.swift */,
+				24F62887266847E40036218C /* UserCollectionViewCell.swift */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		24F628932669AF3B0036218C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				24F6286E2666F67B0036218C /* UserDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +295,7 @@
 				24F628632666F5800036218C /* HabitCollectionViewController.swift in Sources */,
 				24F6287626674A450036218C /* Color.swift in Sources */,
 				24F6288626682AC30036218C /* User.swift in Sources */,
-				24F6288A266982440036218C /* HabitDetailCollectionViewCell.swift in Sources */,
+				24F6288A266982440036218C /* PrimarySecondaryTextCollectionViewCell.swift in Sources */,
 				24F62888266847E40036218C /* UserCollectionViewCell.swift in Sources */,
 				24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */,
 				24F6287A26674CC90036218C /* APIService.swift in Sources */,

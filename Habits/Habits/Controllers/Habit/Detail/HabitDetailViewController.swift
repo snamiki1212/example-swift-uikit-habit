@@ -9,6 +9,7 @@ import UIKit
 
 class HabitDetailViewController: UIViewController {
     
+    private let cellId = "habit-detail-view-collection-cell-id"
     var updateTimer: Timer?
 
     var habit: Habit!
@@ -63,7 +64,7 @@ class HabitDetailViewController: UIViewController {
         let layout = UICollectionViewLayout()
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(HabitDetailCollectionViewCell.self, forCellWithReuseIdentifier: HabitDetailCollectionViewCell.cellId)
+        cv.register(PrimarySecondaryTextCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         return cv
     }()
 
@@ -130,12 +131,12 @@ class HabitDetailViewController: UIViewController {
     
     func createDataSource() -> DataSourceType {
         return DataSourceType(collectionView: collectionView) { (collectionView, indexPath, grouping) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitDetailCollectionViewCell.cellId, for: indexPath) as! HabitDetailCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! PrimarySecondaryTextCollectionViewCell
     
             switch grouping {
             case .single(let userStat):
-                cell.userNameLabel.text = userStat.user.name
-                cell.countLabel.text = "\(userStat.count)"
+                cell.primaryLabel.text = userStat.user.name
+                cell.secondaryLabel.text = "\(userStat.count)"
             default:
                 break
             }
