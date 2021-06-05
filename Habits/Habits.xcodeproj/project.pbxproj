@@ -34,6 +34,8 @@
 		24F628952669B1D00036218C /* UserStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628942669B1D00036218C /* UserStatistics.swift */; };
 		24F628972669B1FD0036218C /* HabitCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628962669B1FD0036218C /* HabitCount.swift */; };
 		24F628992669E6FB0036218C /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628982669E6FB0036218C /* LoggedHabit.swift */; };
+		24F6289B266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6289A266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift */; };
+		24F6289D266B257D0036218C /* CombinedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6289C266B257D0036218C /* CombinedStatistics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		24F628942669B1D00036218C /* UserStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatistics.swift; sourceTree = "<group>"; };
 		24F628962669B1FD0036218C /* HabitCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCount.swift; sourceTree = "<group>"; };
 		24F628982669E6FB0036218C /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
+		24F6289A266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		24F6289C266B257D0036218C /* CombinedStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStatistics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				24F628602666F44F0036218C /* HomeCollectionViewController.swift */,
+				24F6289A266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				24F6287126674A050036218C /* Habit.swift */,
 				24F6287D266752E60036218C /* Settings.swift */,
 				24F6288B266986E20036218C /* HabitStatistics.swift */,
+				24F6289C266B257D0036218C /* CombinedStatistics.swift */,
 				24F6288D266986F80036218C /* UserCount.swift */,
 				24F628962669B1FD0036218C /* HabitCount.swift */,
 				24F628942669B1D00036218C /* UserStatistics.swift */,
@@ -296,6 +302,7 @@
 			files = (
 				24F628672666F5980036218C /* LogHabitCollectionViewController.swift in Sources */,
 				24F628952669B1D00036218C /* UserStatistics.swift in Sources */,
+				24F6289B266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift in Sources */,
 				2418D3482666A507001C234C /* AppDelegate.swift in Sources */,
 				24F6287826674AE30036218C /* APIRequest.swift in Sources */,
 				24F6288226675B3C0036218C /* HabitCollectionViewCell.swift in Sources */,
@@ -316,6 +323,7 @@
 				24F6285F2666EF740036218C /* MainTabBarController.swift in Sources */,
 				24F62880266758950036218C /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
 				2418D34A2666A507001C234C /* SceneDelegate.swift in Sources */,
+				24F6289D266B257D0036218C /* CombinedStatistics.swift in Sources */,
 				24F628652666F58F0036218C /* UserCollectionViewController.swift in Sources */,
 				24F62884266762460036218C /* NamedSectionHeaderView.swift in Sources */,
 				24F6287426674A270036218C /* Category.swift in Sources */,
