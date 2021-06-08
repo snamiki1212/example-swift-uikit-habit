@@ -143,6 +143,7 @@ class UserCollectionViewController: UICollectionViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UserCollectionViewCell
             cell.contentView.backgroundColor = item.user.color?.uiColor ?? UIColor.systemGray4
             cell.primaryTextLabel.text = item.user.name
+            cell.layer.cornerRadius = 8
             return cell
         }
     

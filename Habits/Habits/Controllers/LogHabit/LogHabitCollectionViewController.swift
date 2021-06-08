@@ -9,6 +9,16 @@ import UIKit
 
 private let reuseIdentifier = "LOG_HABIT_Cell"
 
+// TODO:
+// SelectionIndicatingPrimarySecondaryTextCollectionViewCell
+//layer.cornerRadius = 8
+//layer.shadowRadius = 3
+//layer.shadowColor = UIColor.systemGray3.cgColor
+//layer.shadowOffset = CGSize(width: 0, height: 2)
+//layer.shadowOpacity = 1
+//layer.masksToBounds = false
+//background.layer.cornerRadius = 8
+
 class LogHabitCollectionViewController: HabitCollectionViewController {
 
     override func viewDidLoad() {
@@ -111,9 +121,8 @@ class LogHabitCollectionViewController: HabitCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-    
+        collectionView.deselectItem(at: indexPath, animated: true)
         let loggedHabit = LoggedHabit(
             userID: Settings.shared.currentUser.id,
             habitName: item.name,

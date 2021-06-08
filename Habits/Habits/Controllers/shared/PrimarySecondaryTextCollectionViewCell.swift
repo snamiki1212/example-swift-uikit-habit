@@ -23,6 +23,20 @@ class PrimarySecondaryTextCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    // TODO: change for UIKit
+    override func awakeFromNib() {
+        let background = UIView(frame: bounds)
+        background.translatesAutoresizingMaskIntoConstraints = false
+        background.backgroundColor = UIColor.systemGray4.withAlphaComponent(0.75)
+        selectedBackgroundView = background
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: background.leadingAnchor),
+            trailingAnchor.constraint(equalTo: background.trailingAnchor),
+            topAnchor.constraint(equalTo: background.topAnchor),
+            bottomAnchor.constraint(equalTo: background.bottomAnchor)
+        ])
+    }
 
     
     override init(frame: CGRect) {
