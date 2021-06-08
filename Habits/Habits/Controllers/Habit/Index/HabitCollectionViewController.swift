@@ -14,7 +14,6 @@ private let sectionHeaderIdentifier = "HeaderView"
 
 class HabitCollectionViewController: UICollectionViewController {
     typealias DataSourceType = UICollectionViewDiffableDataSource<ViewModel.Section, ViewModel.Item>
-
     enum ViewModel {
         enum Section: Hashable, Comparable {
             case favorites
@@ -27,6 +26,15 @@ class HabitCollectionViewController: UICollectionViewController {
                     return true
                 case (_, .favorites):
                     return false
+                }
+            }
+            
+            var sectionColor: UIColor {
+                switch self {
+                case .favorites:
+                    return favoriteHabitColor
+                case .category(let category):
+                    return category.color.uiColor
                 }
             }
         }
@@ -74,9 +82,10 @@ class HabitCollectionViewController: UICollectionViewController {
         let dataSource = DataSourceType(collectionView: collectionView) {
            (collectionView, indexPath, item) in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HABIT_CELL_ID, for: indexPath) as! HabitCollectionViewCell
-            cell.primaryTextLabel.text = item.name
+            self.configureCell(cell, withItem: item)
             return cell
         }
+        let favoriteHabitColor = UIColor(hue: 0.15, saturation: 1, brightness: 0.9, alpha: 1)
         
         dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
             let header = collectionView.dequeueReusableSupplementaryView(
@@ -84,8 +93,9 @@ class HabitCollectionViewController: UICollectionViewController {
                 withReuseIdentifier: sectionHeaderIdentifier,
                 for: indexPath
             ) as! NamedSectionHeaderView
-        
+            
             let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            header.backgroundColor = section.sectionColor
             
             switch section {
             case .favorites:
@@ -158,6 +168,11 @@ class HabitCollectionViewController: UICollectionViewController {
         dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySection)
     }
     
+    func configureCell(_ cell: HabitCollectionViewCell, withItem item: ViewModel.Item) {
+        cell.primaryTextLabel.text = item.name
+    }
+    
+    
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -208,5 +223,6 @@ class HabitCollectionViewController: UICollectionViewController {
         
         return config
     }
+    
 }
 

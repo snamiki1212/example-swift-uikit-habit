@@ -141,6 +141,7 @@ class UserCollectionViewController: UICollectionViewController {
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UserCollectionViewCell
+            cell.contentView.backgroundColor = item.user.color?.uiColor ?? UIColor.systemGray4
             cell.primaryTextLabel.text = item.user.name
             return cell
         }

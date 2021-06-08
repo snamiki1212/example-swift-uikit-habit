@@ -121,6 +121,16 @@ class LogHabitCollectionViewController: HabitCollectionViewController {
         )
         LogHabitRequest(trackedEvent: loggedHabit).send { _ in }
     }
-
-
+    
+    func configureCell(_ cell: PrimarySecondaryTextCollectionViewCell, withItem item: ViewModel.Item) {
+        cell.primaryLabel.text = item.name
+        cell.layer.cornerRadius = 8
+        if Settings.shared.favoriteHabits.contains(item) {
+            cell.backgroundColor = favoriteHabitColor
+        } else {
+            cell.backgroundColor = .systemGray6
+        }
+    }
 }
+
+let favoriteHabitColor = UIColor(hue: 0.15, saturation: 1, brightness: 0.9, alpha: 1)
