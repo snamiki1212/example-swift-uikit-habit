@@ -85,7 +85,6 @@ class HabitCollectionViewController: UICollectionViewController {
             self.configureCell(cell, withItem: item)
             return cell
         }
-        let favoriteHabitColor = UIColor(hue: 0.15, saturation: 1, brightness: 0.9, alpha: 1)
         
         dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
             let header = collectionView.dequeueReusableSupplementaryView(

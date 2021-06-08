@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "HOME_Cell"
+private let folloedCellId = "Followed_Cell_ID"
 
 class HomeCollectionViewController: UICollectionViewController {
 
@@ -25,12 +25,12 @@ class HomeCollectionViewController: UICollectionViewController {
         for supplementaryView in SupplementaryView.allCases {
             supplementaryView.register(on: collectionView)
         }
-        collectionView.backgroundColor = .blue
-//        self.collectionView!.register(LeaderboardHabitCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(FollowedUserCollectionViewCell.self, forCellWithReuseIdentifier: folloedCellId)
         
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
+        collectionView.backgroundColor = .white
     }
 
 
@@ -46,7 +46,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folloedCellId, for: indexPath)
     
         return cell
     }
@@ -60,8 +60,7 @@ class HomeCollectionViewController: UICollectionViewController {
         }
     
         enum Item: Hashable {
-            case leaderboardHabit(name: String, leadingUserRanking: String?,
-               secondaryUserRanking: String?)
+            case leaderboardHabit(name: String, leadingUserRanking: String?, secondaryUserRanking: String?)
             case followedUser(_ user: User, message: String)
             func hash(into hasher: inout Hasher) {
                 switch self {
@@ -74,8 +73,7 @@ class HomeCollectionViewController: UICollectionViewController {
 
             static func ==(_ lhs: Item, _ rhs: Item) -> Bool {
                 switch (lhs, rhs) {
-                case (.leaderboardHabit(let lName, _, _), .leaderboardHabit(let
-                   rName, _, _)):
+                case (.leaderboardHabit(let lName, _, _), .leaderboardHabit(let rName, _, _)):
                     return lName == rName
                 case (.followedUser(let lUser, _), .followedUser(let rUser,
                    _)):
@@ -306,8 +304,6 @@ class HomeCollectionViewController: UICollectionViewController {
         sectionIDs.append(.followedUsers)
         itemsBySection[.followedUsers] = followedUserItems
         dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySection)
-        
-        
     }
 
     func createDataSource() -> DataSourceType {
@@ -318,14 +314,24 @@ class HomeCollectionViewController: UICollectionViewController {
                 cell.habitNameLabel.text = name
                 cell.leaderLabel.text = leadingUserRanking
                 cell.secondaryLabel.text = secondaryUserRanking
+                cell.contentView.backgroundColor = favoriteHabitColor.withAlphaComponent(0.75)
+                cell.contentView.layer.cornerRadius = 8
+                cell.layer.shadowRadius = 3
+                cell.layer.shadowColor = UIColor.systemGray3.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+                cell.layer.shadowOpacity = 1
+                cell.layer.masksToBounds = false
                 return cell
             case .followedUser(let user, let message):
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FollowedUser", for: indexPath) as! PrimarySecondaryTextCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folloedCellId, for: indexPath) as! FollowedUserCollectionViewCell
                 cell.primaryLabel.text = user.name
                 cell.secondaryLabel.text = message
+                if indexPath.item == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+                    cell.separatorLineView.isHidden = true
+                } else {
+                    cell.separatorLineView.isHidden = false
+                }
                 return cell
-//            default:
-//                return nil
             }
         }
         dataSource.supplementaryViewProvider = {
@@ -361,8 +367,6 @@ class HomeCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
             switch self.dataSource.snapshot().sectionIdentifiers[sectionIndex] {
             case .leaderboard:
-                
-
                 let leaderboardItemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(0.3)
@@ -412,7 +416,8 @@ class HomeCollectionViewController: UICollectionViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
                 let followedUserGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: followedUserItem, count: 1)
                 let followedUserSection = NSCollectionLayoutSection(group: followedUserGroup)
-                
+                followedUserSection.interGroupSpacing = 5
+
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: SupplementaryView.followedUsersSectionHeader.viewKind, alignment: .top)
                 followedUserSection.boundarySupplementaryItems = [header]

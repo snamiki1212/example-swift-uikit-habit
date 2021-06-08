@@ -36,6 +36,7 @@
 		24F628992669E6FB0036218C /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F628982669E6FB0036218C /* LoggedHabit.swift */; };
 		24F6289B266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6289A266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift */; };
 		24F6289D266B257D0036218C /* CombinedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6289C266B257D0036218C /* CombinedStatistics.swift */; };
+		24F628A0266EFCEF0036218C /* FollowedUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6289F266EFCEF0036218C /* FollowedUserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		24F628982669E6FB0036218C /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
 		24F6289A266B20E40036218C /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
 		24F6289C266B257D0036218C /* CombinedStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStatistics.swift; sourceTree = "<group>"; };
+		24F6289F266EFCEF0036218C /* FollowedUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				24F6285E2666EF740036218C /* MainTabBarController.swift */,
+				24F6289E266EFCCD0036218C /* FollowedUser */,
 				24F628912669A6B40036218C /* shared */,
 				24F628682666F6380036218C /* Home */,
 				24F628692666F63D0036218C /* Habit */,
@@ -232,6 +235,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		24F6289E266EFCCD0036218C /* FollowedUser */ = {
+			isa = PBXGroup;
+			children = (
+				24F6289F266EFCEF0036218C /* FollowedUserCollectionViewCell.swift */,
+			);
+			path = FollowedUser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +328,7 @@
 				24F6286D2666F66B0036218C /* HabitDetailViewController.swift in Sources */,
 				24F628992669E6FB0036218C /* LoggedHabit.swift in Sources */,
 				24F6287A26674CC90036218C /* APIService.swift in Sources */,
+				24F628A0266EFCEF0036218C /* FollowedUserCollectionViewCell.swift in Sources */,
 				24F6287226674A050036218C /* Habit.swift in Sources */,
 				24F628972669B1FD0036218C /* HabitCount.swift in Sources */,
 				24F6287E266752E60036218C /* Settings.swift in Sources */,
