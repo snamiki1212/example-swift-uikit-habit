@@ -1,6 +1,13 @@
 # OVERVIEW
 
-- BOOK: ‎Develop in Swift Data Collections(P751)
+- BOOK: Develop in Swift Data Collections(P751)
+
+## PAGES
+
+- WIP: Home(not working)
+- Habits / Detail
+- People / Detail
+- WIP: Log Habits(no click animation)
 
 ## SERVER
 
